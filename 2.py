@@ -4,4 +4,3 @@ with open('input-1.txt', 'r') as file:
     # unfortunate
     f = lambda s, g, h: str(digits.index(g([d for d in digits if d in s], key=h)) % 9 + 1)
     print(sum(int(f(s, min, s.find) + f(s, max, s.rfind)) for s in file))
-    # for s in file: print(s, f(s, min, s.find), f(s, max, s.rfind))
