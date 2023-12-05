@@ -12,16 +12,13 @@ int main() {
 
     while (fgets(buffer, 255, f) != NULL) {
         int m = 0;
-        // counts[l] += 1;
         for (int i=0; i<a; i++) {
             for (int j=0; j<b; j++) {
                 if (buffer[start+3*i]==buffer[start2+3*j] &&
-                        buffer[start+3*i+1]==buffer[start2+3*j+1]) m++;
-            }}
-        if (l == lines) break; // ?
+                        buffer[start+3*i+1]==buffer[start2+3*j+1]) m++; }}
+        if (l == lines) break;
         for (int i=l+1; i<(lines < l+m+1 ? lines : l+m+1); i++)
             counts[i] += counts[l];
-        printf("%d, %d, %d\n", l, m, counts[l]);
         l++;
     }
 
