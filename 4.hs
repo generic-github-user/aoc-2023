@@ -13,4 +13,4 @@ fewest games =
 
 main = do
     content <- readFile "./input-2.txt"
-    print (sum (map (product . M.elems) (fewest $ lines content)))
+    print $ sum $ map (product . M.elems) (fewest $ lines content)
