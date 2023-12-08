@@ -3,6 +3,7 @@ import Data.List
 import Data.Maybe
 import Data.Ord
 
+-- used for generating an ordering on hands
 score :: String -> (Int, Int, [Int])
 score h = let cards = "AKQJT98765432" in
     -- number of unique cards in hand; higher-rated kinds have fewer

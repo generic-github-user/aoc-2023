@@ -6,7 +6,6 @@ import Data.Ord
 -- used for generating an ordering on hands
 score :: String -> (Int, Int, [Int])
 score h = let cards = "AKQT98765432J"; h2 = filter (/='J') h in
-    -- TODO: clean up...
     -- number of unique cards in hand; higher-rated kinds have fewer; if hand
     -- contains jokers (but not only jokers), unique card count decreases by
     -- one
@@ -16,7 +15,7 @@ score h = let cards = "AKQT98765432J"; h2 = filter (/='J') h in
     -- number of jokers to frequency of second most common card (or 0 if hand
     -- is only jokers)
     negate $ ((if h2 == [] then 0 else maximum $ map length $ group $ sort h2)
-        + (length $ filter (=='J') h)), -- more concise options?
+        + (length $ filter (=='J') h)),
     -- handles lexicographic fallback sort using custom ordering (for when the
     -- first two features are the same for both cards); unchanged from pt. 1
     map (\c -> fromJust $ elemIndex c cards) h)

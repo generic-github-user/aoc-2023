@@ -1,3 +1,6 @@
 input-*.txt
 *.hi
 *.o
+*.out
+*.bak
+CHANGELOG.md
